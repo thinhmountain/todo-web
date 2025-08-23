@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up Page</title>
+    <link rel="stylesheet" href="/frontend//css/style.css">
+</head>
+
+   
+
+   
+<body>
+   <div class="main">
+
+  <form  action="{{ url_for('register_task.register_page') }}" method="POST" class="form" id="form-1">
+    <h3 class="heading">Create new account</h3>
+    <p class="desc">Welcome to Todo Web ❤️</p>
+
+    <div class="spacer"></div>
+
+    <div class="form-group">
+      <label for="username " class="form-label">Username</label>
+      <input id="fullname" name="fullname" type="text" placeholder="EX: thinhnguyen" class="form-control">
+      <span class="form-message"></span>
+    </div>
+
+    <div class="form-group">
+      <label for="email" class="form-label">Email</label>
+      <input id="email" name="email" type="text" placeholder="EX: email@gmail.com" class="form-control">
+      <span class="form-message"></span>
+    </div>
+    
+    <div class="form-group">
+      <label for="password" class="form-label">Password</label>
+      <input id="password" name="password" type="password" placeholder="Enter your password" class="form-control">
+      <span class="form-message"></span>
+    </div>
+
+    <div class="form-group">
+      <label for="password_confirmation" class="form-label">Confirm Password</label>
+      <input id="password_confirmation" name="password_confirmation" placeholder="Enter your password again" type="password" class="form-control">
+      <span class="form-message"></span>
+    </div>
+
+    <button class="form-submit" type="submit">Sign up</button>
+  </form>
+  
+
+</div>
+</body>
+    <script src="/frontend/js/login-register.js"></script>
+
+<script>
+  Validator({
+    form: '#form-1',
+    rules: [
+      Validator.isRequired('#fullname'),
+      Validator.isRequired('#email'),
+      Validator.isEmail('#email'),
+      Validator.isRequired('#password'),
+      Validator.minLength('#password',6),
+      Validator.isRequired('#password_confirmation'),
+      Validator.confirmPassword('#password_confirmation', function(){
+        return document.querySelector('#form-1 #password').value
+      })
+    ],
+    // onSubmit: function(data){
+    //   // Gửi dữ liệu đến Flask backend qua fetch API
+    //   fetch('/login', {
+    //     method: 'POST',
+    //     headers: {
+    //       'Content-Type': 'application/json'
+    //     },
+    //     body: JSON.stringify(data)
+    //   })
+    //   .then(response => response.json())
+    //   .then(result => {
+    //     if(result.success){
+    //       alert('Đăng nhập thành công!');
+    //     } else {
+    //       alert('Đăng nhập thất bại: ' + result.message);
+    //     }
+    //   })
+    //   .catch(error => {
+    //     alert('Có lỗi xảy ra!');
+    //   });
+    // }
+  })
+</script>
+</html>
+
+
+
