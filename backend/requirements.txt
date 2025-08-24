@@ -3,4 +3,5 @@ Flask-SQLAlchemy
 Flask-Marshmallow
 python-dotenv
 gunicorn
+psycopg2-binary
 

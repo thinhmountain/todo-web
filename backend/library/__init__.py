@@ -14,8 +14,6 @@ BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 
 
 def create_db(app):
-    db_path = 'to-do-list.db' 
-    if not os.path.exists(db_path):
         with app.app_context():
             db.create_all()
             print("Database created successfully.")
