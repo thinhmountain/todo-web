@@ -3,8 +3,9 @@ from library.task.controller import create, read, update, delete,login,logout,re
 from flask import Flask,render_template,send_file,url_for
 
 
+app = create_app()    
 if __name__ == "__main__":
-    app = create_app()    
+
     app.register_blueprint(create)
     app.register_blueprint(read)
     app.register_blueprint(update)
