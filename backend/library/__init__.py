@@ -1,5 +1,5 @@
 from flask import Flask,request,Blueprint
-from extension import db, ma
+from extension  import db, ma
 from library import config
 from model import tasks
 import os

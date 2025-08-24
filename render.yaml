@@ -10,7 +10,7 @@ services:
     name: to-do-list-api
     runtime: python
     buildCommand: pip install -r backend/requirements.txt
-    startCommand: gunicorn backend.library:create_app
+    startCommand: "cd backend && gunicorn app:app"
     envVars:
       - key: PYTHONPATH
         value: .
