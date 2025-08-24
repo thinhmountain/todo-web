@@ -21,8 +21,10 @@ def create_db(app):
 def create_app():
     app = Flask(
         __name__,
-        template_folder="/Users/thinhmountain/Desktop/to-do-list-api/frontend/templates",
-        static_folder=os.path.join(BASE_DIR, "/Users/thinhmountain/Desktop/to-do-list-api/frontend"))
+        template_folder=os.path.join(BASE_DIR, "../../frontend/templates"),
+        static_folder=os.path.join(BASE_DIR, "../../frontend")
+    )
+
    
     # add
     bcrypt = Bcrypt(app)
